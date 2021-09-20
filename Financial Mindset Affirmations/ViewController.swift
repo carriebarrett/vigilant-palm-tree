@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // code to update titles w/current affirmations
+        // code to update titles w/current affirmations goes here
         affirmationA.setTitle("Affirmation goes here", for: .normal)
         
         let center = UNUserNotificationCenter.current()
