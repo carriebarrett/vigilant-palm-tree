@@ -22,7 +22,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // code to update titles w/current affirmations goes here
-        affirmationA.setTitle(affirmationMessages[0].text, for: .normal)
+        var number1 = Int.random(in: 0...4)
+        var number2 = Int.random(in: 0...4)
+        while number2 == number1 {
+            number2 = Int.random(in: 0...4)
+        }
+        var number3 = Int.random(in: 0...4)
+        while number3 == number1 || number3 == number2 {
+            number3 = Int.random(in: 0...4)
+        }
+        affirmationA.setTitle(affirmationMessages[number1].text, for: .normal)
+        affirmationB.setTitle(affirmationMessages[number2].text, for: .normal)
+        affirmationC.setTitle(affirmationMessages[number3].text, for: .normal)
         
         let center = UNUserNotificationCenter.current()
         
@@ -72,4 +83,7 @@ struct Affirmation {
 var affirmationMessages =
     [Affirmation(text: "I deserve a prosperous life", category: Category.moneyMindset),
      Affirmation(text: "Money is a tool that can change my life for the better", category: Category.moneyMindset),
-     Affirmation(text: "I control money, money doesn't control me", category: Category.moneyMindset)]
+     Affirmation(text: "I control money, money doesn't control me", category: Category.moneyMindset),
+     Affirmation(text: "Money flows to me freely as I move through this world", category: Category.moneyMindset),
+     Affirmation(text: "I can use money to create a better life", category: Category.moneyMindset)
+    ]
