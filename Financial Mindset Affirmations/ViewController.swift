@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // code to update titles w/current affirmations goes here
-        affirmationA.setTitle("Affirmation goes here", for: .normal)
+        affirmationA.setTitle(affirmationMessages[0].text, for: .normal)
         
         let center = UNUserNotificationCenter.current()
         
@@ -57,24 +57,19 @@ class ViewController: UIViewController {
 
 }
 
-class affirm1 {
-    var text = "I deserve a prosperous life"
-    var category = "Money Mindset"
-    var id = 101
+enum Category {
+    case moneyMindset
+    case income
+    case budgeting
+    case other
 }
 
-class affirm2 {
-    var text = "Money is a tool that can change my life for the better"
-    var category = "Money Mindset"
-    var id = 102
+struct Affirmation {
+    var text = ""
+    var category = Category.other
 }
 
-class affirm3 {
-    var text = "I control money, money doesn't control me"
-    var category = "Money Mindset"
-    var id = 103
-}
-
-//var affirmationMessages = [1: affirm1,
-  //                         2: affirm2,
-    //                       3: affirm3]
+var affirmationMessages =
+    [Affirmation(text: "I deserve a prosperous life", category: Category.moneyMindset),
+     Affirmation(text: "Money is a tool that can change my life for the better", category: Category.moneyMindset),
+     Affirmation(text: "I control money, money doesn't control me", category: Category.moneyMindset)]
